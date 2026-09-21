@@ -11,8 +11,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # ---- load and clean ----
-# Use the CSV path from the command line when provided
-FILE = sys.argv[1]
+# Use the CSV path from the command line when provided.
+# With no argument, fall back to the Whitecourt sample that ships with the repo.
+if len(sys.argv) < 2:
+    FILE = "en_climate_hourly_AB_3067371_04-2016_P1H.csv"
+    print("no file given, using", FILE)
+else:
+    FILE = sys.argv[1]
 
 # Read the raw climate file and keep only the columns needed for the charts.
 df = pd.read_csv(FILE, parse_dates=["Date/Time (UTC)"], encoding="utf-8-sig")
