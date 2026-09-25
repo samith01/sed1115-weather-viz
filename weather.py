@@ -1,10 +1,10 @@
 """Create a four-panel weather summary from hourly Environment Canada climate data.
 
 Usage:
-    python weather_viz.py [file.csv] [start YYYY-MM-DD] [end YYYY-MM-DD]
+    python weather.py [file.csv]
 
 The script reads an hourly CSV, converts timestamps to local Alberta time,
-filters by an optional date range, and saves a summary graphic as weather_insights.png.
+and saves a summary graphic as weather_insights.png.
 """
 import sys
 import pandas as pd
